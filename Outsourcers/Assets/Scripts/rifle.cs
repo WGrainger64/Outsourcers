@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class rifle : MonoBehaviour
 {
-    //Camera Reference
-    public Camera playerCamera;
 
     //Rifle Vars
     public float sensitivity = 2.0f;
@@ -18,6 +16,12 @@ public class rifle : MonoBehaviour
     public Transform bulletSpawn;
     public float bulletVelocity = 30f;
     public float bulletLife = 3f;
+
+    //Muzzle effect
+    public GameObject muzzleEffect;
+
+    //Reference to the animator
+    private Animator animator;
 
     public enum ShootingMode
     {
@@ -32,6 +36,7 @@ public class rifle : MonoBehaviour
     {
         readyToShoot = true;
         burstBulletsLeft = bulletsPerBurst;
+        animator = GetComponent<Animator>();
     }
 
     //Shooting
@@ -51,6 +56,7 @@ public class rifle : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -89,6 +95,11 @@ public class rifle : MonoBehaviour
 
     private void FireWeapon()
     {
+        muzzleEffect.GetComponent<ParticleSystem>().Play();
+        animator.SetTrigger("RECOIL");
+
+        SoundManager.Instance.shootingSoundRifle.Play();
+
         readyToShoot = false;
 
         Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
@@ -131,7 +142,7 @@ public class rifle : MonoBehaviour
     public Vector3 CalculateDirectionAndSpread()
     {
         //Shooting from the middle of our screen to check where we are pointing at
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
         Vector3 targetPoint;
