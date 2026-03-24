@@ -7,11 +7,12 @@ TagManager:
   - Target
   - Wall
   - Enemy
+  - WeaponRender
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - WeaponRender
   - Water
   - UI
   - 
