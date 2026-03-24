@@ -14,6 +14,7 @@ public class rifle : MonoBehaviour
     public Transform bulletSpawn;
     public float bulletVelocity = 30f;
     public float bulletLife = 3f;
+    public int weaponDamage;
 
     //Muzzle effect
     [Header("Muzzle")]
@@ -154,6 +155,9 @@ public class rifle : MonoBehaviour
         //Use our bullet prefab at bulletSpawn position with default rotation
         //Instantiate the bullet
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+
+        bullet bul = bullet.GetComponent<bullet>();
+        bul.bulletDamage = weaponDamage;
 
         //Pointing the bullet to face the shooting direction
         bullet.transform.forward = shootingDirection;

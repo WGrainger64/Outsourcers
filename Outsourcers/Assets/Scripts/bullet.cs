@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+
+    public int bulletDamage;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Target"))
@@ -18,6 +20,12 @@ public class bullet : MonoBehaviour
 
             CreatBulletImpactEffect(collision);
 
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<Bug>().TakeDamage(bulletDamage);
             Destroy(gameObject);
         }
     }
