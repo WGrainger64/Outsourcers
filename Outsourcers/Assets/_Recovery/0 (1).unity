@@ -355,7 +355,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &231583900
 RectTransform:
@@ -1234,7 +1234,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &547907881
 BoxCollider:
@@ -1458,7 +1458,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &645498826
 BoxCollider:
@@ -1570,7 +1570,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &732557833
 BoxCollider:
@@ -1916,7 +1916,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!154 &1260835429
 TerrainCollider:
@@ -2087,7 +2087,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1511086353
 BoxCollider:
@@ -2496,14 +2496,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.73
@@ -2552,14 +2544,6 @@ PrefabInstance:
       propertyPath: m_Depth
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 122350861142806304, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4337929149334240122, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6059959278101458485, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Cameras.Array.size
       value: 1
@@ -2568,10 +2552,6 @@ PrefabInstance:
       propertyPath: 'm_Cameras.Array.data[0]'
       value: 
       objectReference: {fileID: 48557466}
-    - target: {fileID: 6763097925944588963, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7846545980036707038, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_CameraType
       value: 1
@@ -2615,14 +2595,6 @@ PrefabInstance:
     - target: {fileID: 8221645183530112634, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_ClearFlags
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444961549676099875, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8625001150514230981, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2988,7 +2960,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1943853074
 MonoBehaviour:
@@ -3238,11 +3210,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015704051}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2025649570 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-  m_PrefabInstance: {fileID: 1917995916}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2074146740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,7 +3227,7 @@ GameObject:
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &2074146741
 BoxCollider:
@@ -3472,46 +3439,6 @@ PrefabInstance:
     - target: {fileID: 147409562801244819, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 147409562801244819, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337449601633844733, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: m_Height
-      value: 2.073181
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337449601633844733, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: m_Radius
-      value: 0.50760484
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337449601633844733, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: m_Center.x
-      value: 0.0075747967
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337449601633844733, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: m_Center.y
-      value: 0.036590457
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337449601633844733, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: m_Center.z
-      value: -0.00000011920929
-      objectReference: {fileID: 0}
-    - target: {fileID: 2634540742338344225, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3072953763936542483, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2025649570}
-    - target: {fileID: 3072953763936542483, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: isAlive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5243590788271887310, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5713398511456965791, guid: 21ab289561ebfad4683305e967d6c939, type: 3}
       propertyPath: m_LocalPosition.x

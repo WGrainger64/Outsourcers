@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 public class rifle : MonoBehaviour
-{ 
+{
     //Reference to the animator
     private Animator animator;
 
@@ -20,13 +20,17 @@ public class rifle : MonoBehaviour
     [Header("Muzzle")]
     public GameObject muzzleEffect;
 
-   
+
 
     //Loading
     [Header("Loading")]
     public float reloadTime;
     public int magazineSize, bulletsLeft;
     public bool isReloading;
+
+    [Header("Spawn Location")]
+    public Vector3 spawnPosition;
+    public Vector3 spawnRotation;
 
     public bool isADS;
 
