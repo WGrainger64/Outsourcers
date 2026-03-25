@@ -8,6 +8,11 @@ public class Bug : MonoBehaviour
     public bool isAlive;
     public GameObject player;
 
+    [Header("Bug Holding Position")]
+    public Vector3 spawnPos;
+    public Vector3 spawnRot;
+    public bool currHold = false;
+
     private NavMeshAgent navAgent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,13 +45,12 @@ public class Bug : MonoBehaviour
         {
             
             //If bug is dead allow it to be picked up
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //Set bug as a child to the parent
-                print("pickup");
-                transform.SetParent(player.transform, false);
-                transform.localPosition = new Vector3(-1f, 0.4f, 1f); //NOT WORKING FUCK ME
-            }
+           
+        }
+
+        if (currHold)
+        {
+            //If the bug is currently being held
         }
     }
 

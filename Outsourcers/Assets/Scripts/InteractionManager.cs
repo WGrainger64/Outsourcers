@@ -4,6 +4,8 @@ public class InteractionManager : MonoBehaviour
 {
     public static InteractionManager Instance { get; set; }
 
+    public Bug hoveredBug = null;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +30,22 @@ public class InteractionManager : MonoBehaviour
 
             if (objectHitByRaycast.GetComponent<Bug>())
             {
-                print("Bug Selected");
+                hoveredBug = objectHitByRaycast.gameObject.GetComponent<Bug>();
+                if (hoveredBug.isAlive == false)
+                {
+                    hoveredBug.GetComponent<Outline>().enabled = true;
+                    if (Input.GetKeyDown(KeyCode.E))
+                    { 
+                        BugManager.Instance.PickupBug(objectHitByRaycast.gameObject);
+                    }
+                }
+            }
+            else
+            {
+                if (hoveredBug)
+                {
+                    hoveredBug.GetComponent<Outline>().enabled = false;
+                }
             }
         }
     }
