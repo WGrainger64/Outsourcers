@@ -10,6 +10,7 @@ public class BugManager : MonoBehaviour
     public GameObject activeBugSlot;
     public List<GameObject> bugSlots;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +40,15 @@ public class BugManager : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SwitchActiveSlot(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SwitchActiveSlot(1);
+        }
+
     }
 
     public void PickupBug(GameObject pickedUpBug)
@@ -58,6 +68,8 @@ public class BugManager : MonoBehaviour
 
         //Set current bug to be picked up
         bug.currHold = true;
+        //stop animations
+        bug.animator.enabled = false;
     }
 
     private void DropCurrentBug(GameObject pickedUpBug)
@@ -68,10 +80,28 @@ public class BugManager : MonoBehaviour
             var bugToDrop = activeBugSlot.transform.GetChild(0).gameObject;
 
             bugToDrop.GetComponent<Bug>().currHold = false;
+            bugToDrop.GetComponent<Bug>().animator.enabled = true;
 
             bugToDrop.transform.SetParent(pickedUpBug.transform.parent);
             bugToDrop.transform.localPosition = pickedUpBug.transform.localPosition;
             bugToDrop.transform.localRotation = pickedUpBug.transform.localRotation; //21:45
+        }
+    }
+
+    public void SwitchActiveSlot(int slotNumber)
+    {
+        if(activeBugSlot.transform.childCount > 0)
+        {
+            Bug currBug = activeBugSlot.transform.GetChild(0).GetComponent<Bug>();
+            currBug.currHold = false;
+        }
+
+        activeBugSlot = bugSlots[slotNumber];
+
+        if (activeBugSlot.transform.childCount > 0)
+        {
+            Bug newBug = activeBugSlot.transform.GetChild(0).GetComponent<Bug>();
+            newBug.currHold = true;
         }
     }
 }

@@ -28,7 +28,7 @@ public class InteractionManager : MonoBehaviour
         {
             GameObject objectHitByRaycast = hit.transform.gameObject;
 
-            if (objectHitByRaycast.GetComponent<Bug>())
+            if (objectHitByRaycast.GetComponent<Bug>() && objectHitByRaycast.GetComponent<Bug>().currHold == false)
             {
                 hoveredBug = objectHitByRaycast.gameObject.GetComponent<Bug>();
                 if (hoveredBug.isAlive == false)

@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class Bug : MonoBehaviour
 {
     [SerializeField] public int HP = 20;
-    private Animator animator;
+    internal Animator animator;
     public bool isAlive;
     public GameObject player;
 
@@ -29,14 +29,6 @@ public class Bug : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (navAgent.velocity.magnitude > 0.1f)
-        {
-            //animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            //animator.SetBool("isWalking",false);
-        }
         if (isAlive)
         {
             //If bug is alive
@@ -51,6 +43,7 @@ public class Bug : MonoBehaviour
         if (currHold)
         {
             //If the bug is currently being held
+            GetComponent<Outline>().enabled = false; //It wont be outlined if its being held
         }
     }
 
@@ -62,13 +55,20 @@ public class Bug : MonoBehaviour
         if (HP <= 0)
         {
             animator.SetTrigger("DIE");
+            animator.SetBool("isDead",true);
             isAlive = false;
             print("dead");
-            
+            GetComponent<NavMeshAgent>().enabled = false;
+            animator.enabled = false;
         }
         else
         {
             animator.SetTrigger("DAMAGE");
         }
-   } 
+   }
+
+    private void OnDrawGizmos() //20:16 Enemies: State Machine
+    {
+        
+    }
 }
