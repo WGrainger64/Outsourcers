@@ -111,7 +111,7 @@ public class rifle : MonoBehaviour
         }
 
         //Reload Check. Works if you push left click or R
-        if ((Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Mouse0)) && bulletsLeft < magazineSize && isReloading == false)
+        if ((Input.GetKeyDown(KeyCode.R)) && bulletsLeft < magazineSize && isReloading == false)
         {
             Reload();
         }

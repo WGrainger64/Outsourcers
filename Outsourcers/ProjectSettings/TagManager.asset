@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - WeaponRender
   - Waypoint
+  - BugAttack
   layers:
   - Default
   - TransparentFX

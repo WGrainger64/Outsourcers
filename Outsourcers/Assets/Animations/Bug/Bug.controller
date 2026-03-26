@@ -63,6 +63,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1508765418020916930}
   - {fileID: -8557466919336540566}
+  - {fileID: -496916896762292975}
   m_StateMachineBehaviours:
   - {fileID: -2881068789757830670}
   m_Position: {x: 50, y: 50, z: 0}
@@ -173,6 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91d69abf4b2cab45b6e6b08958052f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  fleeSpeed: 6
+  stopFleeingDistance: 21
 --- !u!1102 &-3832198846873226025
 AnimatorState:
   serializedVersion: 6
@@ -280,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5101f7e20ad82a74fad7fd38b78d44a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  idleTime: 0.2
+  idleTime: 4
   detectionAreaRadius: 18
 --- !u!114 &-2200626470270619660
 MonoBehaviour:
@@ -294,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ad0910be99e2e4c9e548e1123788af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  patrolTime: 3
+  patrolTime: 7
   detectionAreaRadius: 18
   patrolSpeed: 2
 --- !u!1101 &-752236135001022660
@@ -319,6 +322,31 @@ AnimatorStateTransition:
   m_ExitTime: 0.75
   m_HasExitTime: 0
   m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-496916896762292975
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: isFleeing
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -5340595091900066055}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -501,7 +529,7 @@ AnimatorStateMachine:
     m_Position: {x: 300, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3783732448384145616}
-    m_Position: {x: 580, y: -10, z: 0}
+    m_Position: {x: 660, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6503572732815427024}
     m_Position: {x: 670, y: 160, z: 0}

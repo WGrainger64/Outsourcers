@@ -4,14 +4,18 @@ using UnityEngine.AI;
 public class Bug : MonoBehaviour
 {
     [SerializeField] public int HP = 20;
+    public int bugDamage = 1;
     internal Animator animator;
     public bool isAlive;
     public GameObject player;
+    public BugAttack bugAttack;
 
     [Header("Bug Holding Position")]
     public Vector3 spawnPos;
     public Vector3 spawnRot;
     public bool currHold = false;
+
+
 
     private NavMeshAgent navAgent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,6 +23,8 @@ public class Bug : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         navAgent = GetComponent<NavMeshAgent>();
+
+        bugAttack.damage = bugDamage;
     }
 
     private void Awake()
@@ -67,8 +73,15 @@ public class Bug : MonoBehaviour
         }
    }
 
-    private void OnDrawGizmos() //20:16 Enemies: State Machine
+    private void OnDrawGizmos() 
     {
-        
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 2.5f); // Attacking //Stop Attacking
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, 18f); // Detection (Start chasing)
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, 21f); // Stop Chasing
     }
 }

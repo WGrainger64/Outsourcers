@@ -35,8 +35,7 @@ public class BugPatrolState : StateMachineBehaviour
             waypointsList.Add(t);
         }
 
-        Vector3 nextPosition = waypointsList[Random.Range(0,waypointsList.Count)].position;
-        Debug.Log(nextPosition);
+        Vector3 nextPosition = waypointsList[Random.Range(0, waypointsList.Count)].position;
         agent.SetDestination(nextPosition);
     }
 
@@ -62,7 +61,21 @@ public class BugPatrolState : StateMachineBehaviour
         float distanceFromPlayer = Vector3.Distance(player.position, animator.transform.position);
         if (distanceFromPlayer < detectionAreaRadius)
         {
-            animator.SetBool("isChasing", true);
+            int randomNum = Random.Range(0,2);
+            if (randomNum == 0)
+            {
+                
+                animator.SetBool("isChasing",true);
+                animator.SetBool("isFleeing", false);
+
+            }
+            else if (randomNum == 1)
+            {
+                
+                animator.SetBool("isFleeing",true);
+                animator.SetBool("isChasing", false);
+            }
+            animator.SetBool("isPatrolling", false);
         }
     }
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
