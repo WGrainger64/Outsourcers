@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: c2080f1fd09053a4c9bc69a98cbbbf0f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9998bd873687840bbc2d4ac885b75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  stopAttackingDistance: 2.5
+  stopAttackingDistance: 4
 --- !u!114 &-2881068789757830670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   chaseSpeed: 6
   stopChasingDistance: 21
-  attackingDistance: 2.5
+  attackingDistance: 4
 --- !u!1102 &5010556292645403957
 AnimatorState:
   serializedVersion: 6
@@ -627,7 +627,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack_State
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4857778242350159826}
@@ -641,7 +641,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 00c589348c9f67343afa8ba79d13a591, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

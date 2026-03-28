@@ -6,6 +6,8 @@ public class GlobalReference : MonoBehaviour
 
     public GameObject bulletImpactEffectPrefab;
 
+    public GameObject bloodSprayEffect;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

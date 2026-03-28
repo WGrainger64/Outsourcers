@@ -8,6 +8,14 @@ public class SoundManager : MonoBehaviour
     public AudioSource reloadingSoundRifle;
     public AudioSource emptyMagazineSoundRifle;
 
+    public AudioSource playerChannel;
+    public AudioClip playerHurt;
+    public AudioClip playerDeath;
+    public AudioClip gameOverMusic;
+
+    public AudioSource recordingChannel;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -25,10 +25,33 @@ public class bullet : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            print("hit a bug");
-            collision.gameObject.GetComponent<Bug>().TakeDamage(bulletDamage);
+            if (collision.gameObject.GetComponent<Bug>().isAlive == true)
+            {
+
+                collision.gameObject.GetComponent<Bug>().TakeDamage(bulletDamage);
+                CreateBloodSprayEffect(collision);
+            }
+
+            
             Destroy(gameObject);
         }
+    }
+
+    private void CreateBloodSprayEffect(Collision objectWeHit)
+    {
+        ContactPoint contact = objectWeHit.contacts[0];
+
+        GameObject bloodSprayPrefab = Instantiate(
+            GlobalReference.Instance.bloodSprayEffect,
+            contact.point,
+            Quaternion.LookRotation(contact.normal)
+            );
+        bloodSprayPrefab.transform.position = new Vector3(bloodSprayPrefab.transform.position.x, objectWeHit.gameObject.transform.position.y-1f, bloodSprayPrefab.transform.position.z);
+
+        bloodSprayPrefab.transform.SetParent(objectWeHit.gameObject.transform);
+        //Replace the y value lower on the bug
+        //bloodSprayPrefab.transform.localPosition = new Vector3(bloodSprayPrefab.transform.position.x, 2f, bloodSprayPrefab.transform.position.z);
+        print(bloodSprayPrefab.transform.position);
     }
 
     void CreatBulletImpactEffect(Collision objectWeHit)

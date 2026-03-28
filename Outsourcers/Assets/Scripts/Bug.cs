@@ -15,8 +15,6 @@ public class Bug : MonoBehaviour
     public Vector3 spawnRot;
     public bool currHold = false;
 
-
-
     private NavMeshAgent navAgent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,6 +41,7 @@ public class Bug : MonoBehaviour
         {
             
             //If bug is dead allow it to be picked up
+
            
         }
 
