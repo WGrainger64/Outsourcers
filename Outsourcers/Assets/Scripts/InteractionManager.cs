@@ -30,6 +30,12 @@ public class InteractionManager : MonoBehaviour
 
             if (objectHitByRaycast.GetComponent<Bug>() && objectHitByRaycast.GetComponent<Bug>().currHold == false)
             {
+                //Disable outline of previously selected item
+                if (hoveredBug)
+                {
+                    hoveredBug.GetComponent<Outline>().enabled = false;
+                }
+
                 hoveredBug = objectHitByRaycast.gameObject.GetComponent<Bug>();
                 if (hoveredBug.isAlive == false)
                 {
@@ -47,6 +53,8 @@ public class InteractionManager : MonoBehaviour
                     hoveredBug.GetComponent<Outline>().enabled = false;
                 }
             }
+
+            //Put the interaction for the disposal outline here
         }
     }
 }

@@ -80,7 +80,7 @@ public class BugManager : MonoBehaviour
             var bugToDrop = activeBugSlot.transform.GetChild(0).gameObject;
 
             bugToDrop.GetComponent<Bug>().currHold = false;
-            bugToDrop.GetComponent<Bug>().animator.enabled = true;
+            //bugToDrop.GetComponent<Bug>().animator.enabled = true;
 
             bugToDrop.transform.SetParent(pickedUpBug.transform.parent);
             bugToDrop.transform.localPosition = pickedUpBug.transform.localPosition;

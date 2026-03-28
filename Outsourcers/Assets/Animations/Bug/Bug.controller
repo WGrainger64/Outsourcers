@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91d69abf4b2cab45b6e6b08958052f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fleeSpeed: 6
-  stopFleeingDistance: 21
+  fleeSpeed: 20
+  stopFleeingDistance: 60
 --- !u!1102 &-3832198846873226025
 AnimatorState:
   serializedVersion: 6

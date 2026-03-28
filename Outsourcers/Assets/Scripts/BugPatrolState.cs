@@ -45,7 +45,6 @@ public class BugPatrolState : StateMachineBehaviour
         //Check if enemy reached waypoint then it will move to the next
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            Debug.Log("move to next waypoint");
             agent.SetDestination(waypointsList[Random.Range(0, waypointsList.Count)].position);
         }
 

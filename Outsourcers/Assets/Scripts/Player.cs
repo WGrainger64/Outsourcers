@@ -34,9 +34,10 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("hi");
+        print("damage");
         if (other.CompareTag("BugAttack"))
         {
+            
             TakeDamage(other.gameObject.GetComponent<BugAttack>().damage);
         }
     }

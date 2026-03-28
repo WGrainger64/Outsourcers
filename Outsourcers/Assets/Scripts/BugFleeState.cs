@@ -23,9 +23,10 @@ public class BugFleeState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector3 playerPos = new Vector3(player.position.x+50, player.position.y, player.position.z+50);
-        agent.SetDestination(playerPos);
-        animator.transform.LookAt(player);
+        Vector3 directionToPlayer = player.position - animator.transform.position;
+        Vector3 oppositeDirection = animator.transform.position - directionToPlayer;
+        agent.SetDestination(oppositeDirection);
+        animator.transform.LookAt(oppositeDirection);
 
         float distanceFromPlayer = Vector3.Distance(player.position, animator.transform.position);
 
