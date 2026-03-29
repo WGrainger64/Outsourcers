@@ -4529,7 +4529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 101.9, y: 19.1}
+  m_AnchoredPosition: {x: 101.899994, y: 19.099976}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1708068010
@@ -5579,10 +5579,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 451702598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 114.3, y: 90.4}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -101.8, y: -25}
+  m_SizeDelta: {x: 200.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933169240
 MonoBehaviour:
@@ -5604,7 +5604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $0
+  m_text: "You Owe: \n$400000.00"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 93378f9c52eaa7645950a2298929086e, type: 2}
   m_sharedMaterial: {fileID: -5895165157912484981, guid: 93378f9c52eaa7645950a2298929086e, type: 2}
@@ -6066,7 +6066,7 @@ MonoBehaviour:
   gameOverText: {fileID: 152386691}
   isDead: 0
   weapon: {fileID: 844967246}
-  playerMoney: 0
+  playerMoney: 400000
   playerMoneyUI: {fileID: 1933169240}
 --- !u!114 &2025649586
 MonoBehaviour:

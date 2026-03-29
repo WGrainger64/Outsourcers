@@ -115,12 +115,12 @@ public class BugManager : MonoBehaviour
         priceFluct = Mathf.Round(priceFluct * 100.0f) * 0.01f;
 
         //Add current player money the price of the bug and the price fluctation
-        float money = player.GetComponent<Player>().playerMoney += currentBug.price + priceFluct;
+        float money = player.GetComponent<Player>().playerMoney -= currentBug.price + priceFluct;
 
         //Play chaching
         SoundManager.Instance.chaChing.Play();
 
-        player.GetComponent<Player>().playerMoneyUI.text = $"${money}";
+        player.GetComponent<Player>().playerMoneyUI.text = $"You Owe: ${money}";
 
         Destroy(activeBugSlot.transform.GetChild(0).gameObject);
     }

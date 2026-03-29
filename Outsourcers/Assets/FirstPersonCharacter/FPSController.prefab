@@ -34,7 +34,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 400002}
-  - {fileID: 6237636218665558041}
   - {fileID: 1539565442989612241}
   - {fileID: 7740209874591701896}
   m_Father: {fileID: 0}
@@ -255,6 +254,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6237636218665558041}
   - {fileID: 2316914698642323411}
   m_Father: {fileID: 400000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -721,13 +721,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   HP: 4
+  bloodyScreen: {fileID: 0}
+  playerHealthUI: {fileID: 0}
+  ammoText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  isDead: 0
+  weapon: {fileID: 0}
+  playerMoney: 500000
+  playerMoneyUI: {fileID: 0}
 --- !u!1001 &2497831983013855764
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 400000}
+    m_TransformParent: {fileID: 400002}
     m_Modifications:
     - target: {fileID: 6000191355686256832, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
       propertyPath: magazineSize
@@ -755,15 +763,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8375180059418124813, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.96
+      value: 0.9599991
       objectReference: {fileID: 0}
     - target: {fileID: 8375180059418124813, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.109
+      value: -0.6909998
       objectReference: {fileID: 0}
     - target: {fileID: 8375180059418124813, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.51
+      value: 1.5099983
       objectReference: {fileID: 0}
     - target: {fileID: 8375180059418124813, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
       propertyPath: m_LocalRotation.w
