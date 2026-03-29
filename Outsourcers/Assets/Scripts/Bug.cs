@@ -9,6 +9,8 @@ public class Bug : MonoBehaviour
     public bool isAlive;
     public GameObject player;
     public BugAttack bugAttack;
+    public GameObject bugHorn;
+    public float price;
 
     [Header("Bug Holding Position")]
     public Vector3 spawnPos;
@@ -65,6 +67,7 @@ public class Bug : MonoBehaviour
             print("dead");
             GetComponent<NavMeshAgent>().enabled = false;
             animator.enabled = false;
+            bugHorn.SetActive(false);
         }
         else
         {

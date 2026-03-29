@@ -17,10 +17,13 @@ public class Player : MonoBehaviour
 
     public bool isDead;
     public GameObject weapon;
+    public float playerMoney = 0;
+    public TextMeshProUGUI playerMoneyUI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerHealthUI.text = $"Health: {HP}";
+        playerMoneyUI.text = $"${playerMoney}";
     }
 
     // Update is called once per frame

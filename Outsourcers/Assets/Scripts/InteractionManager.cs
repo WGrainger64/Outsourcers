@@ -5,6 +5,7 @@ public class InteractionManager : MonoBehaviour
     public static InteractionManager Instance { get; set; }
 
     public Bug hoveredBug = null;
+    public Disposal_script hoveredBin = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +56,30 @@ public class InteractionManager : MonoBehaviour
             }
 
             //Put the interaction for the disposal outline here
+            if (objectHitByRaycast.GetComponent<Disposal_script>())
+            {
+                //Disable outline of previously selected item
+                if (hoveredBin)
+                {
+                    hoveredBin.GetComponent<Outline>().enabled = false;
+                }
+
+                hoveredBin = objectHitByRaycast.gameObject.GetComponent<Disposal_script>();
+
+                hoveredBin.GetComponent<Outline>().enabled = true;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    BugManager.Instance.SellBug(objectHitByRaycast.gameObject);
+                }
+            }
+            else
+            {
+                if (hoveredBin)
+                {
+                    hoveredBin.GetComponent<Outline>().enabled = false;
+                }
+            }
         }
     }
 }

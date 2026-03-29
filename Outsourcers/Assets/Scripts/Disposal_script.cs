@@ -13,4 +13,9 @@ public class Disposal_script : MonoBehaviour
     {
         
     }
+
+    public void SellBug(GameObject bin)
+    {
+
+    }
 }

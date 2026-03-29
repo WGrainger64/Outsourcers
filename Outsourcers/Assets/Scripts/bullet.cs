@@ -39,19 +39,23 @@ public class bullet : MonoBehaviour
 
     private void CreateBloodSprayEffect(Collision objectWeHit)
     {
-        ContactPoint contact = objectWeHit.contacts[0];
+        Bug bug = objectWeHit.gameObject.GetComponent<Bug>();
+        if (bug.isAlive)
+        {
+            ContactPoint contact = objectWeHit.contacts[0];
 
-        GameObject bloodSprayPrefab = Instantiate(
-            GlobalReference.Instance.bloodSprayEffect,
-            contact.point,
-            Quaternion.LookRotation(contact.normal)
-            );
-        bloodSprayPrefab.transform.position = new Vector3(bloodSprayPrefab.transform.position.x, objectWeHit.gameObject.transform.position.y-1f, bloodSprayPrefab.transform.position.z);
+            GameObject bloodSprayPrefab = Instantiate(
+                GlobalReference.Instance.bloodSprayEffect,
+                contact.point,
+                Quaternion.LookRotation(contact.normal)
+                );
+            bloodSprayPrefab.transform.position = new Vector3(bloodSprayPrefab.transform.position.x, objectWeHit.gameObject.transform.position.y - 1f, bloodSprayPrefab.transform.position.z);
 
-        bloodSprayPrefab.transform.SetParent(objectWeHit.gameObject.transform);
-        //Replace the y value lower on the bug
-        //bloodSprayPrefab.transform.localPosition = new Vector3(bloodSprayPrefab.transform.position.x, 2f, bloodSprayPrefab.transform.position.z);
-        print(bloodSprayPrefab.transform.position);
+            bloodSprayPrefab.transform.SetParent(objectWeHit.gameObject.transform);
+            //Replace the y value lower on the bug
+            //bloodSprayPrefab.transform.localPosition = new Vector3(bloodSprayPrefab.transform.position.x, 2f, bloodSprayPrefab.transform.position.z);
+            print(bloodSprayPrefab.transform.position);
+        }
     }
 
     void CreatBulletImpactEffect(Collision objectWeHit)

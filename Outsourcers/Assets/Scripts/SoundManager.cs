@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource shootingSoundRifle;
     public AudioSource reloadingSoundRifle;
     public AudioSource emptyMagazineSoundRifle;
+    public AudioSource chaChing;
 
     public AudioSource playerChannel;
     public AudioClip playerHurt;
