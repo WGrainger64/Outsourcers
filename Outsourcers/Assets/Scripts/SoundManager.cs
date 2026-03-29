@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip gameOverMusic;
 
     public AudioSource recordingChannel;
+    //AudioClips for Recordins
+    public AudioClip recording1;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

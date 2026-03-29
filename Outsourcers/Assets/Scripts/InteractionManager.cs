@@ -3,9 +3,11 @@ using UnityEngine;
 public class InteractionManager : MonoBehaviour
 {
     public static InteractionManager Instance { get; set; }
+    public Transform player;
 
     public Bug hoveredBug = null;
     public Disposal_script hoveredBin = null;
+    public Recorder hoveredTape = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,25 +27,30 @@ public class InteractionManager : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
-        if (Physics.Raycast(ray,out hit)) 
+        if (Physics.Raycast(ray, out hit))
         {
             GameObject objectHitByRaycast = hit.transform.gameObject;
 
             if (objectHitByRaycast.GetComponent<Bug>() && objectHitByRaycast.GetComponent<Bug>().currHold == false)
             {
-                //Disable outline of previously selected item
-                if (hoveredBug)
+                //Test distance here
+                float distanceFromObject = Vector3.Distance(player.position, objectHitByRaycast.transform.position);
+                if (distanceFromObject < 8f)
                 {
-                    hoveredBug.GetComponent<Outline>().enabled = false;
-                }
+                    //Disable outline of previously selected item
+                    if (hoveredBug)
+                    {
+                        hoveredBug.GetComponent<Outline>().enabled = false;
+                    }
 
-                hoveredBug = objectHitByRaycast.gameObject.GetComponent<Bug>();
-                if (hoveredBug.isAlive == false)
-                {
-                    hoveredBug.GetComponent<Outline>().enabled = true;
-                    if (Input.GetKeyDown(KeyCode.E))
-                    { 
-                        BugManager.Instance.PickupBug(objectHitByRaycast.gameObject);
+                    hoveredBug = objectHitByRaycast.gameObject.GetComponent<Bug>();
+                    if (hoveredBug.isAlive == false)
+                    {
+                        hoveredBug.GetComponent<Outline>().enabled = true;
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            BugManager.Instance.PickupBug(objectHitByRaycast.gameObject);
+                        }
                     }
                 }
             }
@@ -58,19 +65,24 @@ public class InteractionManager : MonoBehaviour
             //Put the interaction for the disposal outline here
             if (objectHitByRaycast.GetComponent<Disposal_script>())
             {
-                //Disable outline of previously selected item
-                if (hoveredBin)
+                //Test distance here
+                float distanceFromObject = Vector3.Distance(player.position, objectHitByRaycast.transform.position);
+                if (distanceFromObject < 8f)
                 {
-                    hoveredBin.GetComponent<Outline>().enabled = false;
-                }
+                    //Disable outline of previously selected item
+                    if (hoveredBin)
+                    {
+                        hoveredBin.GetComponent<Outline>().enabled = false;
+                    }
 
-                hoveredBin = objectHitByRaycast.gameObject.GetComponent<Disposal_script>();
+                    hoveredBin = objectHitByRaycast.gameObject.GetComponent<Disposal_script>();
 
-                hoveredBin.GetComponent<Outline>().enabled = true;
+                    hoveredBin.GetComponent<Outline>().enabled = true;
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    BugManager.Instance.SellBug(objectHitByRaycast.gameObject);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        BugManager.Instance.SellBug();
+                    }
                 }
             }
             else
@@ -78,6 +90,36 @@ public class InteractionManager : MonoBehaviour
                 if (hoveredBin)
                 {
                     hoveredBin.GetComponent<Outline>().enabled = false;
+                }
+            }
+
+            if (objectHitByRaycast.GetComponent<Recorder>())
+            {
+                //Test distance here
+                float distanceFromObject = Vector3.Distance(player.position, objectHitByRaycast.transform.position);
+                if (distanceFromObject < 8f)
+                {
+                    //Disable outline of previously selected item
+                    if (hoveredTape)
+                    {
+                        hoveredTape.GetComponent<Outline>().enabled = false;
+                    }
+
+                    hoveredTape = objectHitByRaycast.gameObject.GetComponent<Recorder>();
+
+                    hoveredTape.GetComponent<Outline>().enabled = true;
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        hoveredTape.PlayRecording(objectHitByRaycast.gameObject);
+                    }
+                }
+            }
+            else
+            {
+                if (hoveredTape)
+                {
+                    hoveredTape.GetComponent<Outline>().enabled = false;
                 }
             }
         }
