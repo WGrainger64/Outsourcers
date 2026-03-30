@@ -19,6 +19,10 @@ public class MainMenu : MonoBehaviour
         //Set the high score text
         float highScore = SaveLoadManager.Instance.LoadHighScore();
         highScoreUI.text = $"Least Owed: ${highScore}";
+
+        //Unlock the cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void StartNewGame()

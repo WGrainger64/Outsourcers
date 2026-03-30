@@ -4,6 +4,7 @@ public class DoorScript : MonoBehaviour
 {
     public bool doorBool = true;
     public float doorSpeed = 1.0f;
+    public float doorHeight = 9f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +24,7 @@ public class DoorScript : MonoBehaviour
 
         if (doorBool)
         {
-            if (transform.position.y < 11.2)
+            if (transform.position.y < doorHeight)
             {
                 transform.Translate(0, translation, 0);
             }

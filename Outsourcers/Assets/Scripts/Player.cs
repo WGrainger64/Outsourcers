@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator ReturnToMainMenu()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
 
         print("return");
         SceneManager.LoadScene("Main Menu");

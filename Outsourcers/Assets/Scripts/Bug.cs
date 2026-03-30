@@ -72,6 +72,7 @@ public class Bug : MonoBehaviour
         else
         {
             animator.SetTrigger("DAMAGE");
+            animator.SetBool("isChasing", true);
         }
    }
 
