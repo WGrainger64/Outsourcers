@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -77,6 +78,20 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         gameOverText.gameObject.SetActive(true);
+
+        if (playerMoney < SaveLoadManager.Instance.LoadHighScore())
+        {
+            SaveLoadManager.Instance.SaveHighScore(playerMoney);
+        }
+
+        StartCoroutine(ReturnToMainMenu());
+    }
+
+    private IEnumerator ReturnToMainMenu()
+    {
+        yield return new WaitForSeconds(6f);
+
+        SceneManager.LoadScene("MainMenu");
     }
 
     private IEnumerator BloodyScreenEffect()
