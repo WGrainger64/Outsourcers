@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   highScoreUI: {fileID: 2101517176}
-  newGameScene: Outsourcers Game
+  newGameScene: Intro
   bg_music: {fileID: 8300000, guid: b9c16c8c5d110f242aa6029865089812, type: 3}
   main_channel: {fileID: 1515785054}
 --- !u!4 &1515785053
