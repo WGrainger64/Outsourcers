@@ -89,9 +89,10 @@ public class Player : MonoBehaviour
 
     private IEnumerator ReturnToMainMenu()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene("MainMenu");
+        print("return");
+        SceneManager.LoadScene("Main Menu");
     }
 
     private IEnumerator BloodyScreenEffect()

@@ -41,12 +41,14 @@ public class InteractionManager : MonoBehaviour
                     if (hoveredBug)
                     {
                         hoveredBug.GetComponent<Outline>().enabled = false;
+                        hoveredBug.transform.GetChild(0).gameObject.SetActive(false);
                     }
 
                     hoveredBug = objectHitByRaycast.gameObject.GetComponent<Bug>();
                     if (hoveredBug.isAlive == false)
                     {
                         hoveredBug.GetComponent<Outline>().enabled = true;
+                        hoveredBug.transform.GetChild(0).gameObject.SetActive(true);
                         if (Input.GetKeyDown(KeyCode.E))
                         {
                             BugManager.Instance.PickupBug(objectHitByRaycast.gameObject);
@@ -59,6 +61,7 @@ public class InteractionManager : MonoBehaviour
                 if (hoveredBug)
                 {
                     hoveredBug.GetComponent<Outline>().enabled = false;
+                    hoveredBug.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
 
@@ -73,9 +76,11 @@ public class InteractionManager : MonoBehaviour
                     if (hoveredBin)
                     {
                         hoveredBin.GetComponent<Outline>().enabled = false;
+                        objectHitByRaycast.transform.GetChild(0).gameObject.SetActive(false);
                     }
 
                     hoveredBin = objectHitByRaycast.gameObject.GetComponent<Disposal_script>();
+                    objectHitByRaycast.transform.GetChild(0).gameObject.SetActive(true);
 
                     hoveredBin.GetComponent<Outline>().enabled = true;
 
@@ -90,6 +95,7 @@ public class InteractionManager : MonoBehaviour
                 if (hoveredBin)
                 {
                     hoveredBin.GetComponent<Outline>().enabled = false;
+                    hoveredBin.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
 
@@ -103,9 +109,11 @@ public class InteractionManager : MonoBehaviour
                     if (hoveredTape)
                     {
                         hoveredTape.GetComponent<Outline>().enabled = false;
+                        hoveredTape.transform.GetChild(0).gameObject.SetActive(false);
                     }
 
                     hoveredTape = objectHitByRaycast.gameObject.GetComponent<Recorder>();
+                    hoveredTape.transform.GetChild(0).gameObject.SetActive(true);
 
                     hoveredTape.GetComponent<Outline>().enabled = true;
 
@@ -120,6 +128,7 @@ public class InteractionManager : MonoBehaviour
                 if (hoveredTape)
                 {
                     hoveredTape.GetComponent<Outline>().enabled = false;
+                    hoveredTape.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
         }
