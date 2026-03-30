@@ -34,6 +34,8 @@ public class BugFleeState : StateMachineBehaviour
 
         if (distanceFromPlayer > stopFleeingDistance)
         {
+            //Debug.Log(distanceFromPlayer);
+            //Debug.Log(stopFleeingDistance);
             animator.SetBool("isFleeing", false);
         }
     }

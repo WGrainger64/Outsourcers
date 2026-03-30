@@ -33,9 +33,10 @@ public class BugIdleState : StateMachineBehaviour
         if (distanceFromPlayer < detectionAreaRadius)
         {
             int randomNum = Random.Range(0, 2);
+            //Debug.Log(randomNum);
             if (randomNum == 0)
             {
-               
+              
                 animator.SetBool("isChasing", true);
                 animator.SetBool("isFleeing", false);
 
@@ -46,7 +47,7 @@ public class BugIdleState : StateMachineBehaviour
                 animator.SetBool("isFleeing", true);
                 animator.SetBool("isChasing", false);
             }
-            animator.SetBool("isPatrolling", false);
+            //animator.SetBool("isIdle", false);
         
         }
 

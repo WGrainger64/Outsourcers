@@ -61,6 +61,7 @@ public class BugPatrolState : StateMachineBehaviour
         if (distanceFromPlayer < detectionAreaRadius)
         {
             int randomNum = Random.Range(0,2);
+            //Debug.Log(randomNum);
             if (randomNum == 0)
             {
                 

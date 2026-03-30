@@ -22,7 +22,9 @@ public class BugSpawnController : MonoBehaviour
     public List<Bug> currentBugsAlive;
 
     public GameObject bugPrefab;
+    public GameObject rareBugPrefab;
     public Transform player;
+    public int rareSpawnChance = 10;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,9 +53,16 @@ public class BugSpawnController : MonoBehaviour
             //Generate a random offset within a specified range
             Vector3 spawnOffset = new Vector3(UnityEngine.Random.Range(-1f,1f), 0f, UnityEngine.Random.Range(-1f,1f));
             Vector3 spawnPosition = transform.position + spawnOffset;
-
-            var bug = Instantiate(bugPrefab, spawnPosition,Quaternion.identity);
-
+            int randomNum = UnityEngine.Random.Range(0, 101);
+            var bug = Instantiate(bugPrefab, spawnPosition, Quaternion.identity); ;
+            print(randomNum);
+            if (randomNum <= rareSpawnChance)
+            {
+                //Rare bug Spawn
+                //Change the var to rare bug
+                bug = Instantiate(rareBugPrefab, spawnPosition, Quaternion.identity);
+            }
+            
             //Get bug script
             Bug bugScript = bug.GetComponent<Bug>();
 

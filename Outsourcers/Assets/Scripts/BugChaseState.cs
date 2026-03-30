@@ -37,6 +37,9 @@ public class BugChaseState : StateMachineBehaviour
 
         if (distanceFromPlayer > stopChasingDistance)
         {
+            //Debug.Log(distanceFromPlayer);
+            //Debug.Log(stopChasingDistance);
+
             animator.SetBool("isChasing", false);
         }
 

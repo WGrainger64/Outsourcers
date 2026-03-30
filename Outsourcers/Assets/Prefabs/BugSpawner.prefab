@@ -157,15 +157,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd91c39edfa42648907fa15592ee0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  initialBugPerWave: 2
+  initialBugPerWave: 1
   currentBugPerWave: 0
   spawnDelay: 0.1
   currentWave: 0
-  waveCooldown: 2
+  waveCooldown: 30
   inCooldown: 0
   cooldownCounter: 0
   waveMult: 2
-  spawnDistance: 150
+  spawnDistance: 80
   currentBugsAlive: []
   bugPrefab: {fileID: 1423184607397831819, guid: 3f165f92938b7f94a80cf96936663560, type: 3}
+  rareBugPrefab: {fileID: 5760323993932713857, guid: 89f6448680f787845b7d8877b305c8d8, type: 3}
   player: {fileID: 0}
+  rareSpawnChance: 10
