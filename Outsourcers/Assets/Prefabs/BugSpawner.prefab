@@ -161,7 +161,7 @@ MonoBehaviour:
   currentBugPerWave: 0
   spawnDelay: 0.1
   currentWave: 0
-  waveCooldown: 30
+  waveCooldown: 15
   inCooldown: 0
   cooldownCounter: 0
   waveMult: 2
