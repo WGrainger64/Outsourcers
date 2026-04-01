@@ -121,12 +121,29 @@ public class BugManager : MonoBehaviour
             //Add current player money the price of the bug and the price fluctation
             float money = player.GetComponent<Player>().playerMoney -= currentBug.price + priceFluct;
 
+            
+
             //Play chaching
             SoundManager.Instance.chaChing.Play();
-
-            player.GetComponent<Player>().playerMoneyUI.text = $"You Owe: ${money}";
-
             Destroy(activeBugSlot.transform.GetChild(0).gameObject);
+
+            //Check if the money is less than 0
+            if (money <= 0)
+            {
+                //Set money to 0
+                money = player.GetComponent<Player>().playerMoney = 0;
+                player.GetComponent<Player>().playerMoneyUI.text = $"You Owe: ${money}";
+                //The debt is paid off
+                StartCoroutine(player.GetComponent<Player>().playerWin());
+            }
+            else
+            {
+                player.GetComponent<Player>().playerMoneyUI.text = $"You Owe: ${money}";
+            }
+            
+
+            
+
         }
 
     }

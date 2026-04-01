@@ -799,6 +799,18 @@ PrefabInstance:
       propertyPath: hipSpreadIntensity
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6328417296441684200, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328417296441684200, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328417296441684200, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.09
+      objectReference: {fileID: 0}
     - target: {fileID: 8375180059418124813, guid: 5643313a5f26f5a42859683d4785754c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.9599991

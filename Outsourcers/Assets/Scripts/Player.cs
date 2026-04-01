@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI playerHealthUI;
     public TextMeshProUGUI ammoText;
     public GameObject gameOverText;
+    public GameObject youWinText;
 
     public bool isDead;
     public GameObject weapon;
@@ -41,14 +42,6 @@ public class Player : MonoBehaviour
         if (HP <= 0)
         {
             print("Player Dead");
-            //Set player to dead
-            isDead = true;
-            //Turn off the gun
-            weapon.SetActive(false);
-            playerHealthUI.text = $"Health: {HP}";
-            playerHealthUI.color = Color.red;
-            playerMoneyUI.color = Color.red;
-            ammoText.color = Color.red;
             PlayerDead();
         }
         else
@@ -66,6 +59,14 @@ public class Player : MonoBehaviour
         SoundManager.Instance.playerChannel.clip = SoundManager.Instance.gameOverMusic;
         SoundManager.Instance.playerChannel.PlayDelayed(2f);
         GetComponent<FirstPersonController>().enabled = false;
+        //Set player to dead
+        isDead = true;
+        //Turn off the gun
+        weapon.SetActive(false);
+        playerHealthUI.text = $"Health: {HP}";
+        playerHealthUI.color = Color.red;
+        playerMoneyUI.color = Color.red;
+        ammoText.color = Color.red;
 
         //Dying Animation
         GetComponentInChildren<Animator>().enabled = true;
@@ -146,5 +147,18 @@ public class Player : MonoBehaviour
             }
            
         }
+    }
+
+    public IEnumerator playerWin()
+    {
+        //The player wins
+        //Disable all UI and display text
+        //"You paid off your debt! Congrats Outsourcer. You have lost your usefulness. Your contract with PoachCorp ends here."
+        youWinText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(6f);
+        youWinText.gameObject.SetActive(false);
+        PlayerDead();
+
     }
 }
