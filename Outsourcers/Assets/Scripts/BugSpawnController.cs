@@ -76,17 +76,6 @@ public class BugSpawnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //check if we are close enough to spawn bugs
-        float distanceFromObject = Vector3.Distance(player.position, transform.position);
-        if (distanceFromObject < spawnDistance)
-        {
-            GetComponent<BugSpawnController>().enabled = true;
-        }
-        else
-        {
-            GetComponent<BugSpawnController>().enabled = false;
-        }
-
             //Get all dead bugs
             List<Bug> bugToRemove = new List<Bug>();
         foreach (Bug bug in currentBugsAlive)

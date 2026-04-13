@@ -14,8 +14,7 @@ public class MainMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        main_channel.PlayOneShot(bg_music);
-
+        main_channel.Play();
         //Set the high score text
         float highScore = SaveLoadManager.Instance.LoadHighScore();
         highScoreUI.text = $"Least Owed: ${highScore}";
